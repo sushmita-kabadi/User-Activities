@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<head>
+	<title>User Info</title>
+	<link rel="stylesheet" href = "CSS/practice_app/mystyle.css"/>
+</head>
+<body>
+	<h1>Here ther user list</h1>
+	{% for user in user_info %}
+		<p>User Info</p>
+		<ul>
+			<li>{{ user.first_name }}</li>
+			<li>{{ user.last_name }}</li>
+			<li>{{ user.email }}</li>
+		</ul>
+	{% endfor %}
+
+</body>
+</html>
