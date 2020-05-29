@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src = "tic_tac_toe_computer.js"></script>
+	</head>
+	<body onload="get_row_col()">
+		<select id='num_row_col' onchange='load()'>
+		</select>
+		<input type='button' value='Restart' onclick='restart()'/>
+		<p id='cont'/>
+		<table id="tic_tac_tbl" style="position:absolute" cellpadding="6" cellspacing="6" border="1">
+		<tbody id="tb">
+		</table>
+		
+	</body>
+</html>
