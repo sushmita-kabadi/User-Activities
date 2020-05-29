@@ -1,0 +1,138 @@
+<html>
+<head>
+<title> Display data </title>
+<style>
+
+[draggable=true] {
+    cursor: move;
+}
+
+
+
+
+.show_popup {
+    overflow:scroll;
+    resize:both;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 400;
+    top: 100;
+    width: 40%; /* Full width */
+    height: 40%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(128,128,128); /* Fallback color */
+     /* Black w/ opacity */
+}
+</style>
+
+<script type='text/javascript' src='add_update_database.js'></script>
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+</head>
+<body onload = "DisplayRecord()">
+<center>
+	
+       <table style="position:absolute; height:100%; width:100%" width="600" border="1" cellpadding="1" cellspacing="1">
+                <tr>
+			
+                        <th bgcolor="#C0C0C0">ID</th>
+                        <th bgcolor="#C0C0C0">Passwd</th>
+                        <th bgcolor="#C0C0C0">Name</th>
+                        <th bgcolor="#C0C0C0">Role</th>
+                        <th bgcolor="#C0C0C0">Status</th>
+			<th bgcolor="#C0C0C0"><input type="button"  id="popup" value="+" onclick="insert1()"></input>  </th>
+                       <!-- <th> <a href="http://192.168.1.220/insert_backup_2.html"> AddData</a></th>
+			<th> <a href="http://192.168.1.220/insert_backup_2.html">EditData</a></th>
+			<th> <a href="http://192.168.1.220/insert_backup_2.html">RemoveData</a></th>-->
+
+                </tr>
+  <tbody id="tb" ></tbody>
+        </table>
+</center>
+
+<!--<table id = 'new_table' class='modal'> <td>EnterID:</td>-->
+<div draggable="true" id='modal'class="show_popup">
+<table id = 'new_table' class='modal'>
+<!--	<span id='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</span>-->	
+	<tr><td><td><td><button type="submit" value="X" id='close' onclick="close1()">X</input></td></td></td></tr>
+		 <td>EnterID:</td>
+        <td><input type="text" name="t1" id="t1" readonly></td></tr>
+        <tr><td>EnterPasswd:</td>
+        <td><input type="text" name="t2" id="t2" ></td></tr>
+        <tr><td>EnterName:</td>
+        <td><input type="text" name="t3" id="t3" readonly></td></tr>
+        <tr><td>EnterRole:</td>
+        <td><input type="text" name="t4" id="t4" ></td></tr>
+        <tr><td>EnterStatus:</td>
+        <td><input type="text" name="t5" id="t5" readonly></td></tr>
+        <tr><td><input type="button" id='chang'  onclick="EditContent()" value="edit"></input></td></tr>
+
+</table>
+</div>
+</div>
+
+<div draggable="true" id='modal1' class="show_popup">
+<table id = 'new_table1' class='modal1'>
+<!--    <span id='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</span>-->
+        <tr><td><td><td><button type="submit" id='close' onclick="close2()">X</input></td></td></td></tr>
+        <tr> <td>EnterID:</td>
+        <td><input type="text" name="t1" id="tt1" ></td></tr>
+        <tr><td>EnterPasswd:</td>
+        <td><input type="text" name="t2" id="tt2" ></td></tr>
+        <tr><td>EnterName:</td>
+        <td><input type="text" name="t3" id="tt3" ></td></tr>
+        <tr><td>EnterRole:</td>
+        <td><input type="text" name="t4" id="tt4" ></td></tr>
+        <tr><td>EnterStatus:</td>
+        <td><input type="text" name="t5" id="tt5" ></td></tr>
+        <tr><td><input type="button" id='add'  onclick="insert()" value="Add"></input></td></tr>
+
+</table>
+</div>
+</div>
+
+
+
+
+<!--</table>-->
+
+<!--<input type="submit" onclick="DisplayRecord()" value="display"></input>-->
+
+
+
+
+
+<!--<table>
+ <tr>
+	<form method="POST" action="insert_backup_2.js"> 
+	<td>EnterID:</td>
+	<td><input type="text" name="t1" id="t1"></td></tr>
+	<tr><td>EnterPasswd:</td>
+	<td><input type="text" name="t2" id="t2"></td></tr>
+	<tr><td>EnterName:</td>
+	<td><input type="text" name="t3" id="t3"></td></tr>
+	<tr><td>EnterRole:</td>
+	<td><input type="text" name="t4" id="t4"></td></tr>
+	<tr><td>EnterStatus:</td>
+	<td><input type="text" name="t5" id="t5"></td></tr>
+</tr>
+</table>
+<tr>-->
+<!--<script type="text/javascript">
+	
+	function loadDoc() {
+	alert("hi")
+  	var xhttp = new XMLHttpRequest();
+  	xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) { 
+             document.getElementById("demo").innerHTML = this.responseText;
+    	 }
+       }
+  xhttp.open("POST", "insert_python_script_backup_7.py",false );
+  xhttp.send(id=user_id&psswd=user_psswd&name=user_name&role=user_role&statuss=login_status);-->
+
+<!--</script>-->
+</body>
+</html>
+
