@@ -1,19 +1,22 @@
 from rest_framework_json_api import serializers
-from user_app.models import Paradigm , Language , Programmer 
+from user_app.models import UserModel , Location , ActivityRecord 
 
-class LanguageSerializer(serializers.HyperlinkedModelSerializer):
+class LocationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Language
-        fields = ('id', 'url', 'name' ,'paradigm')
+        model = Location
+        fields = ('id', 'url', 'name' ,'location')
 
-class ParadigmSerializer(serializers.HyperlinkedModelSerializer):   
+class UserModelSerializer(serializers.HyperlinkedModelSerializer):   
     class Meta:
-        model = Paradigm
+        model = UserModel
         fields = ('id','url','name')
 
-class ProgrammerSerializer(serializers.HyperlinkedModelSerializer):
+class ActivityRecordSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Programmer
-        fields = ('id','url','name','languages')
+        start_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+        end_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+        model = ActivityRecord
+        fields = ('id','url','name','locations','start_time','end_time')
+        #fields = ('id','url','name','languages')
 
 

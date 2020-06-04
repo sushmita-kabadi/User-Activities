@@ -20,9 +20,9 @@ from rest_framework import routers
 from user_app import views
 
 router = routers.DefaultRouter()
-router.register(r'language', views.LanguageViewSet)
-router.register(r'paradigm', views.ParadigmViewSet)
-router.register(r'programmer', views.ProgrammerViewSet)
+router.register(r'location', views.LocationViewSet)
+router.register(r'user', views.UserModelViewSet)
+router.register(r'activity', views.ActivityRecordViewSet)
 
 urlpatterns = [
     url('', include(router.urls)),

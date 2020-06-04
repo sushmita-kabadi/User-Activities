@@ -2,23 +2,26 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils import timezone
 
-class Paradigm(models.Model):
+class UserModel(models.Model):
     name = models.CharField(max_length = 200)
 
     def __str__(self):
         return self.name
 
-class Language(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length = 200)
-    paradigm = models.ForeignKey(Paradigm , on_delete=models.CASCADE)
+    location = models.ForeignKey(UserModel , on_delete=models.CASCADE)
     
     def __str__(self):
         return self.name
 
-class Programmer(models.Model):
+class ActivityRecord(models.Model):
     name = models.CharField(max_length = 50)
-    languages = models.ManyToManyField(Language)
+    locations = models.ManyToManyField(Location)
+    start_time = models.DateTimeField(default = timezone.now)
+    end_time = models.DateTimeField(default = timezone.now)
 
     def __str__(self):
         return self.name
